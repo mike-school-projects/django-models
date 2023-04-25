@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-3xl text-green-800">Home Page Django</h1>
+    {% for fruit in fruits %}
+        <p> I like {{fruit}}.</p>
+
+    {% endfor %}
+{% endblock content %}
+
