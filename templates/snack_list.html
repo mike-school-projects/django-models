@@ -1,18 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
+    <table class="table-auto">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
             {% for snack in snacks %}
                 <tr>
                     <td><a href="{% url 'snack_detail' snack.pk %}">{{snack.name}}</a></td>
                     <td>{{snack.description}}</td>
-
                 </tr>
             {% endfor %}
+        </tbody>
     </table>
 
 {% endblock content %}

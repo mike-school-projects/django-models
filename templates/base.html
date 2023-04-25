@@ -1,3 +1,6 @@
+{% load compress %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en" class = 'dark'>
 
@@ -6,15 +9,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snacks!</title>
+
+    {% compress css %}
+      <link rel="stylesheet" href="{% static 'src/output.css' %}">
+    {% endcompress %}
+
 </head>
 
 <header>
-    <nav>
-        <h1>Snack List!</h1>
-        <p>A site dedicated to awesome treats</p>
-        <a href="{% url 'snack_list' %}">Snack List</a>
-        <br>
-    </nav>
+    {% include 'nav.html' %}
 </header>
 
 <body>
